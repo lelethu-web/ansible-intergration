@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "insfrastructure"
+    bucket = "insfrasrsaweb"
     key    = "networking"
     region = "us-east-1"
   }
@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 module "networking" {
-  source                          = "git::github.com/Nkosygbz/ansible-integration.git?ref=networking"
+  source                          = "git::github.com/lelethu-web/ansible-intergration.git?ref=networking"
   region                          = var.region
   vpc_cidr_block                  = var.vpc_cidr_block
   private_subnet_ips              = var.private_subnet_ips
@@ -23,7 +23,7 @@ module "networking" {
 
 module "instance" {
   depends_on                      = [module.networking]
-  source                          = "git::github.com/Nkosygbz/ansible-integration.git?ref=instance"
+  source                          = "git::github.com/lelethu-web/ansible-intergration.git?ref=instance"
   region                          = var.region
   vpc_id                          = module.networking.vpc_id
   subnet_id                       = module.networking.subnet_id
