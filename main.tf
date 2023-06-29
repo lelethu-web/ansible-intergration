@@ -8,7 +8,7 @@ terraform {
 
 provider "aws" {
     region = var.region
-    shared_credentials_file = "/Users/lelethukosana/.aws"
+    shared_credentials_files = "/Users/lelethukosana/.aws"
 }
 
 module "networking" {
