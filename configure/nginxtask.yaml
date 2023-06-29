@@ -1,0 +1,14 @@
+- name: Installing Nginx Webserver
+  become: yes
+  become_user: root
+  apt:
+    name: nginx
+    state: present
+
+- name: Starting the nginx service.
+  become: yes
+  become_user: root
+  service:
+    name: nginx
+    state: started
+    enabled: yes

@@ -1,0 +1,13 @@
+- name: Calling the script that will setup VirtualHost
+  become: yes
+  become_user: root
+  ansible.builtin.shell: /etc/ansible/virtualprep.sh >/dev/null 2>&1 
+ 
+
+- name: Restarting the nginx service after setting up VirtualHost.
+  become: yes
+  become_user: root
+  service:
+    name: nginx
+    state: restarted
+    enabled: yes

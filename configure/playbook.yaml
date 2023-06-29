@@ -1,0 +1,6 @@
+-
+  name: Ansible Install Nginx and Configure VirtualHost at the END.
+  hosts: localhost
+  roles:
+    - nginx
+    - virtualhost
