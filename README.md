@@ -5,7 +5,7 @@ Pre-requisites
 
 
 Create your IAM user and give it appropriate permissions in AWS
-Create bucket and name it “insfrasrsaweb" - this is to store the state file
+Create bucket, this is to store the state file
 Download the IAM creds to your local machine and ensure to state it’s path in the main file in the Provider block
 
 
