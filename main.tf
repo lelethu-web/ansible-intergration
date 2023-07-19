@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "insfrasrsaweb"
+    bucket = "insfrasrbucket"
     key    = "networking"
     region = "us-east-1"
   }
